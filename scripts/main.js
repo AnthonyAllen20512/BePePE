@@ -9,6 +9,7 @@
   const frameScrubber = document.querySelector("[data-keyframe-scrubber]");
   const frameStage = document.querySelector("[data-keyframe-stage]");
   let frameIndex = 0;
+  let frameDirection = 1;
   let isPlaying = true;
   let timer;
   let wasPlayingBeforeScrub = false;
@@ -39,11 +40,10 @@
     isPlaying = true;
     updateToggle();
     timer = window.setInterval(() => {
-      if (frameIndex >= frames.length - 1) {
-        pauseFrames();
-        return;
-      }
-      showFrame(frameIndex + 1);
+      // Ping-pong through the supplied keyframes so the loop never makes a harsh 08 → 01 jump.
+      if (frameIndex >= frames.length - 1) frameDirection = -1;
+      if (frameIndex <= 0) frameDirection = 1;
+      showFrame(frameIndex + frameDirection);
     }, 750);
   };
 
@@ -52,7 +52,8 @@
   frameToggle?.addEventListener("click", () => {
     if (isPlaying) pauseFrames();
     else {
-      if (frameIndex >= frames.length - 1) showFrame(0);
+      if (frameIndex >= frames.length - 1) frameDirection = -1;
+      if (frameIndex <= 0) frameDirection = 1;
       startFrames();
     }
   });
@@ -82,7 +83,8 @@
     isScrubbing = false;
     frameStage.releasePointerCapture(event.pointerId);
     if (wasPlayingBeforeScrub) {
-      if (frameIndex >= frames.length - 1) showFrame(0);
+      if (frameIndex >= frames.length - 1) frameDirection = -1;
+      if (frameIndex <= 0) frameDirection = 1;
       startFrames();
     }
   });
