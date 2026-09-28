@@ -68,7 +68,7 @@
       ],
     },
     cta: {
-      banner: asset("00_sections", "L07_bottom-cta"),
+      banner: "./assets/bottom-cta-hires.png",
       left: asset("06_bottom_cta", "A02_left-composition"),
       center: asset("06_bottom_cta", "A03_center-brand"),
       tagline: alpha("06_bottom_cta", "A06_same-frog-tagline"),

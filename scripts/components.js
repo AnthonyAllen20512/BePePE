@@ -24,10 +24,12 @@
   function renderHero() {
     return `
       <section class="hero" id="home" aria-label="BURNEPEP animated introduction">
-        <div class="keyframe-stage page-width" aria-label="BURNEPEP keyframe animation">
-          ${A.frames.map((src, index) => img(src, "BURNEPEP animation keyframe", `keyframe-frame${index === 0 ? " is-active" : ""}`)).join("")}
-          <div class="keyframe-meta"><span>BURNEPEP / INTRO</span><b data-frame-count>01 / 08</b></div>
-          <button class="keyframe-toggle" type="button" data-keyframe-toggle aria-label="Pause keyframe animation">Ⅱ</button>
+        <div class="keyframe-stage page-width" data-keyframe-stage aria-label="BURNEPEP keyframe animation. Drag left or right to scrub through the sequence.">
+          ${A.frames.map((src, index) => `<img class="keyframe-frame${index === 0 ? " is-active" : ""}" src="${src}" alt="" ${index === 0 ? "fetchpriority=\"high\"" : ""} />`).join("")}
+          <div class="keyframe-ui">
+            <button class="keyframe-toggle" type="button" data-keyframe-toggle aria-label="Pause keyframe animation">Ⅱ</button>
+            <label class="keyframe-scrubber"><span>DRAG TO SCRUB</span><input type="range" min="0" max="7" value="0" step="1" data-keyframe-scrubber aria-label="Animation frame" /><b data-frame-count>01 / 08</b></label>
+          </div>
         </div>
       </section>`;
   }
@@ -75,7 +77,7 @@
 
   function renderCommunity() {
     const rows = [
-      ["x", "X / TWITTER", "Follow the movement"], ["telegram", "TELEGRAM", "Chat with frens"], ["gallery", "GALLERY", "Fan art & memes"],
+      ["x", "X / TWITTER", "Follow the movement"], ["telegram", "TELEGRAM", "Chat with frens"],
     ].map(([icon, title, caption]) => `<button type="button" class="social-row" data-pending>${img(A.community.socialIcons[icon], "")}<span><b>${title}</b><small>${caption}</small></span><i aria-hidden="true">→</i></button>`).join("");
     return `
       <section class="paper-section community" id="community">
@@ -130,9 +132,7 @@
       <footer class="site-footer">
         <div class="footer-inner page-width">
           ${img(A.shared.footerBrand, "BURNEPEP", "footer-brand")}
-          <nav aria-label="Footer navigation"><a href="#manifesto">Manifesto</a><a href="#token">Token</a><a href="#community">Community</a><a href="#roadmap">Roadmap</a><a href="#gallery">Gallery</a></nav>
-          <div class="footer-meta"><span>𝕏&nbsp;&nbsp; ◉&nbsp;&nbsp; ◢&nbsp;&nbsp; ◎</span><b>SAME FROG. BRIGHTER TOMORROW.</b></div>
-          <small>© 2024 BURNEPEP. All rights reserved.</small><div class="legal"><button data-pending>Terms</button><button data-pending>Privacy</button><button data-pending>Contact</button></div>
+          <small>© 2024 BURNEPEP. All rights reserved.</small>
         </div>
       </footer>`;
   }
