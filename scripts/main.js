@@ -8,6 +8,9 @@
   const frameCount = document.querySelector("[data-frame-count]");
   const frameScrubber = document.querySelector("[data-keyframe-scrubber]");
   const frameStage = document.querySelector("[data-keyframe-stage]");
+  // The action accelerates into the black hole and eases out near either end.
+  // Each entry is the dwell time for the transition between two neighbouring source frames.
+  const frameDurations = [840, 700, 600, 520, 450, 530, 700];
   let frameIndex = 0;
   let frameDirection = 1;
   let isPlaying = true;
@@ -15,8 +18,9 @@
   let wasPlayingBeforeScrub = false;
   let isScrubbing = false;
 
-  const showFrame = (index) => {
+  const showFrame = (index, duration = 520) => {
     frameIndex = Math.max(0, Math.min(frames.length - 1, index));
+    frameStage?.style.setProperty("--frame-settle", `${Math.min(520, Math.max(280, duration * 0.72))}ms`);
     frames.forEach((frame, current) => frame.classList.toggle("is-active", current === frameIndex));
     if (frameScrubber) frameScrubber.value = String(frameIndex);
     if (frameCount) frameCount.textContent = `${String(frameIndex + 1).padStart(2, "0")} / ${String(frames.length).padStart(2, "0")}`;
@@ -27,7 +31,7 @@
     frameToggle.setAttribute("aria-label", isPlaying ? "Pause keyframe animation" : "Play keyframe animation");
   };
   const stopFrames = () => {
-    window.clearInterval(timer);
+    window.clearTimeout(timer);
     timer = undefined;
   };
   const pauseFrames = () => {
@@ -39,12 +43,19 @@
     stopFrames();
     isPlaying = true;
     updateToggle();
-    timer = window.setInterval(() => {
+    const queueNextFrame = () => {
+      if (!isPlaying || frames.length < 2) return;
       // Ping-pong through the supplied keyframes so the loop never makes a harsh 08 → 01 jump.
       if (frameIndex >= frames.length - 1) frameDirection = -1;
       if (frameIndex <= 0) frameDirection = 1;
-      showFrame(frameIndex + frameDirection);
-    }, 750);
+      const nextIndex = frameIndex + frameDirection;
+      const duration = frameDurations[Math.min(frameIndex, nextIndex)] ?? 620;
+      timer = window.setTimeout(() => {
+        showFrame(nextIndex, duration);
+        queueNextFrame();
+      }, duration);
+    };
+    queueNextFrame();
   };
 
   showFrame(0);

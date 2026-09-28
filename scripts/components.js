@@ -40,9 +40,10 @@
         <div class="manifesto-inner page-width">
           <div class="manifesto-copy">
             ${img(A.manifesto.title, "The BURNEPEP manifesto", "manifesto-title")}
-            <div class="html-copy">
-              <p><strong>BURNEPEP</strong> is not just a meme.<br />It’s a new perspective.<br />We flip the ordinary, burn the stale,<br />and turn chaos into something brighter.</p>
-              <p>A community that refuses to take things seriously, but takes freedom, creativity and culture seriously.</p>
+            <div class="manifesto-statement">
+              <p class="manifesto-kicker">THE NEW PERSPECTIVE</p>
+              <p class="manifesto-lead"><strong>BURNEPEP</strong> is not just a meme.<br />It’s a new perspective.</p>
+              <p class="manifesto-body">We flip the ordinary, burn the stale, and turn chaos into something brighter.</p>
             </div>
             ${img(A.manifesto.tagline, "Same frog. Brighter tomorrow.", "manifesto-tagline")}
           </div>
@@ -109,7 +110,7 @@
         <div class="roadmap-inner page-width">
           <div class="roadmap-intro">${img(A.roadmap.title, "Roadmap", "roadmap-title")}</div>
           <div class="roadmap-steps">
-            ${stages.map(([number, title, lines], index) => `<article class="roadmap-card"><span>${number}</span><div class="roadmap-heading"><b>${title}</b>${img(A.roadmap.icons[index], "", "roadmap-icon")}</div><p>${lines.join("<br />")}</p>${index < 3 ? img(A.roadmap.arrows[index], "", "roadmap-arrow") : ""}</article>`).join("")}
+            ${stages.map(([number, title, lines], index) => `<article class="roadmap-card"><span>${number}</span><div class="roadmap-heading"><b>${title}</b>${img(A.roadmap.icons[index], "", "roadmap-icon")}</div><p>${lines.join("<br />")}</p></article>${index < 3 ? `<div class="roadmap-connector" aria-hidden="true">${img(A.roadmap.arrows[index], "", "roadmap-arrow")}</div>` : ""}`).join("")}
           </div>
         </div>
       </section>
