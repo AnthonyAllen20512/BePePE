@@ -14,7 +14,7 @@
         </nav>
         <div class="header-actions">
           <div class="social-icons" aria-label="Social links">
-            <button type="button" data-pending aria-label="X">${img(social.x, "")}</button><button type="button" data-pending aria-label="Telegram">${img(social.telegram, "")}</button><button type="button" data-pending aria-label="Instagram">${img(social.instagram, "")}</button>
+            <a href="https://x.com/bepep_bsc" target="_blank" rel="noreferrer" aria-label="X">${img(social.x, "")}</a><a href="https://t.me/BEPEP_BSC" target="_blank" rel="noreferrer" aria-label="Telegram">${img(social.telegram, "")}</a>
           </div>
           ${button("ENTER THE BURN", "#burn", "header-cta")}
         </div>
@@ -24,11 +24,11 @@
   function renderHero() {
     return `
       <section class="hero" id="home" aria-label="BURNEPEP animated introduction">
-        <div class="keyframe-stage page-width" data-keyframe-stage aria-label="BURNEPEP keyframe animation. Drag left or right to scrub through the sequence.">
-          ${A.frames.map((src, index) => `<img class="keyframe-frame${index === 0 ? " is-active" : ""}" src="${src}" alt="" ${index === 0 ? "fetchpriority=\"high\"" : ""} />`).join("")}
+        <div class="keyframe-stage page-width" data-keyframe-stage aria-label="BURNEPEP eight-frame animation. Drag left or right to scrub through the sequence.">
+          ${A.hero.frames.map((src, index) => `<img class="keyframe-frame${index === 0 ? " is-active" : ""}" src="${src}" alt="" ${index === 0 ? "fetchpriority=\"high\"" : ""} />`).join("")}
           <div class="keyframe-ui">
             <button class="keyframe-toggle" type="button" data-keyframe-toggle aria-label="Pause keyframe animation">Ⅱ</button>
-            <label class="keyframe-scrubber"><span>DRAG TO SCRUB</span><input type="range" min="0" max="7" value="0" step="1" data-keyframe-scrubber aria-label="Animation frame" /><b data-frame-count>01 / 08</b></label>
+            <label class="keyframe-scrubber"><span>KEYFRAME SCRUB</span><input type="range" min="0" max="7" value="0" step="1" data-keyframe-scrubber aria-label="Keyframe" /><b data-frame-count>01 / 08</b></label>
           </div>
         </div>
       </section>`;
@@ -77,8 +77,8 @@
 
   function renderCommunity() {
     const rows = [
-      ["x", "X / TWITTER", "Follow the movement"], ["telegram", "TELEGRAM", "Chat with frens"],
-    ].map(([icon, title, caption]) => `<button type="button" class="social-row" data-pending>${img(A.community.socialIcons[icon], "")}<span><b>${title}</b><small>${caption}</small></span><i aria-hidden="true">→</i></button>`).join("");
+      ["x", "X / TWITTER", "Follow the movement", "https://x.com/bepep_bsc"], ["telegram", "TELEGRAM", "Chat with frens", "https://t.me/BEPEP_BSC"],
+    ].map(([icon, title, caption, href]) => `<a class="social-row" href="${href}" target="_blank" rel="noreferrer">${img(A.community.socialIcons[icon], "")}<span><b>${title}</b><small>${caption}</small></span><i aria-hidden="true">→</i></a>`).join("");
     return `
       <section class="paper-section community" id="community">
         <div class="community-inner page-width">

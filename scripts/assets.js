@@ -8,17 +8,24 @@
   window.BurnepepAssets = {
     asset,
     alpha,
-    video: "./video/jimeng-2026-09-28-1906-10秒低算力趣味meme动画，严格参考上传的涂鸦画面：绿色佩佩蛙在米黄色复古涂鸦....mp4",
-    poster: "./video/1.png",
-    frames: ["./keyframes/burn-frame-01.png", "./keyframes/burn-frame-02.png", "./keyframes/burn-frame-03.png", "./keyframes/burn-frame-04.png", "./keyframes/burn-frame-05.png", "./keyframes/burn-frame-06.png", "./keyframes/burn-frame-07.png", "./keyframes/burn-frame-08.png"],
+    hero: {
+      frames: [
+        "./keyframes/burn-frame-01.png",
+        "./keyframes/burn-frame-02.png",
+        "./keyframes/burn-frame-03.png",
+        "./keyframes/burn-frame-04.png",
+        "./keyframes/burn-frame-05.png",
+        "./keyframes/burn-frame-06.png",
+        "./keyframes/burn-frame-07.png",
+        "./keyframes/burn-frame-08.png",
+      ],
+    },
     shared: {
       brand: alpha("01_shared", "B01_header-brand"),
       footerBrand: alpha("01_shared", "B10_footer-brand"),
       socials: {
         x: alpha("01_shared", "B06_header-x"),
-        discord: alpha("01_shared", "B07_header-discord"),
         telegram: alpha("01_shared", "B08_header-telegram"),
-        instagram: alpha("01_shared", "B09_header-instagram"),
       },
     },
     manifesto: {
@@ -45,10 +52,8 @@
       collage: asset("04_community", "C04_community-collage"),
       sticker: alpha("04_community", "C11_frog-sticker"),
       socialIcons: {
-        discord: alpha("04_community", "C18_discord-icon"),
         x: alpha("04_community", "C19_x-icon"),
         telegram: alpha("04_community", "C20_telegram-icon"),
-        gallery: alpha("04_community", "C21_gallery-icon"),
       },
     },
     roadmap: {

@@ -15,46 +15,57 @@
   let isScrubbing = false;
 
   const showFrame = (index) => {
-    frames.forEach((frame, current) => frame.classList.toggle("is-active", current === index));
-    if (frameScrubber) frameScrubber.value = String(index);
-    frameCount.textContent = `${String(index + 1).padStart(2, "0")} / ${String(frames.length).padStart(2, "0")}`;
-  };
-  const startFrames = () => {
-    window.clearInterval(timer);
-    if (!isPlaying || frames.length < 2) return;
-    timer = window.setInterval(() => { frameIndex = (frameIndex + 1) % frames.length; showFrame(frameIndex); }, 100);
-  };
-
-  const setFrame = (index) => {
     frameIndex = Math.max(0, Math.min(frames.length - 1, index));
-    frameScrubber.value = String(frameIndex);
-    showFrame(frameIndex);
+    frames.forEach((frame, current) => frame.classList.toggle("is-active", current === frameIndex));
+    if (frameScrubber) frameScrubber.value = String(frameIndex);
+    if (frameCount) frameCount.textContent = `${String(frameIndex + 1).padStart(2, "0")} / ${String(frames.length).padStart(2, "0")}`;
   };
-
-  const pauseFrames = () => {
-    isPlaying = false;
-    frameToggle.textContent = "▶";
-    frameToggle.setAttribute("aria-label", "Play keyframe animation");
-    startFrames();
-  };
-
-  startFrames();
-  frameToggle?.addEventListener("click", () => {
-    isPlaying = !isPlaying;
+  const updateToggle = () => {
+    if (!frameToggle) return;
     frameToggle.textContent = isPlaying ? "Ⅱ" : "▶";
     frameToggle.setAttribute("aria-label", isPlaying ? "Pause keyframe animation" : "Play keyframe animation");
-    startFrames();
+  };
+  const stopFrames = () => {
+    window.clearInterval(timer);
+    timer = undefined;
+  };
+  const pauseFrames = () => {
+    isPlaying = false;
+    stopFrames();
+    updateToggle();
+  };
+  const startFrames = () => {
+    stopFrames();
+    isPlaying = true;
+    updateToggle();
+    timer = window.setInterval(() => {
+      if (frameIndex >= frames.length - 1) {
+        pauseFrames();
+        return;
+      }
+      showFrame(frameIndex + 1);
+    }, 750);
+  };
+
+  showFrame(0);
+  startFrames();
+  frameToggle?.addEventListener("click", () => {
+    if (isPlaying) pauseFrames();
+    else {
+      if (frameIndex >= frames.length - 1) showFrame(0);
+      startFrames();
+    }
   });
 
   frameScrubber?.addEventListener("input", () => {
     pauseFrames();
-    setFrame(Number(frameScrubber.value));
+    showFrame(Number(frameScrubber.value));
   });
 
   const updateFromPointer = (event) => {
     const rect = frameStage.getBoundingClientRect();
     const progress = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width));
-    setFrame(Math.round(progress * (frames.length - 1)));
+    showFrame(Math.round(progress * (frames.length - 1)));
   };
 
   frameStage?.addEventListener("pointerdown", (event) => {
@@ -71,9 +82,7 @@
     isScrubbing = false;
     frameStage.releasePointerCapture(event.pointerId);
     if (wasPlayingBeforeScrub) {
-      isPlaying = true;
-      frameToggle.textContent = "Ⅱ";
-      frameToggle.setAttribute("aria-label", "Pause keyframe animation");
+      if (frameIndex >= frames.length - 1) showFrame(0);
       startFrames();
     }
   });
