@@ -3,12 +3,29 @@
   document.querySelector("[data-header]").innerHTML = C.renderHeader();
   document.querySelector("[data-page]").innerHTML = [C.renderHero(), C.renderManifesto(), C.renderToken(), C.renderCommunity(), C.renderRoadmap(), C.renderCta(), C.renderFooter()].join("");
 
-  const video = document.querySelector(".hero-video");
-  const toggle = document.querySelector("[data-video-toggle]");
-  video?.play().catch(() => {});
-  toggle?.addEventListener("click", () => {
-    if (video.paused) { video.play(); toggle.textContent = "Ⅱ"; toggle.setAttribute("aria-label", "Pause intro video"); }
-    else { video.pause(); toggle.textContent = "▶"; toggle.setAttribute("aria-label", "Play intro video"); }
+  const frames = [...document.querySelectorAll(".keyframe-frame")];
+  const frameToggle = document.querySelector("[data-keyframe-toggle]");
+  const frameCount = document.querySelector("[data-frame-count]");
+  let frameIndex = 0;
+  let isPlaying = true;
+  let timer;
+
+  const showFrame = (index) => {
+    frames.forEach((frame, current) => frame.classList.toggle("is-active", current === index));
+    frameCount.textContent = `${String(index + 1).padStart(2, "0")} / ${String(frames.length).padStart(2, "0")}`;
+  };
+  const startFrames = () => {
+    window.clearInterval(timer);
+    if (!isPlaying || frames.length < 2) return;
+    timer = window.setInterval(() => { frameIndex = (frameIndex + 1) % frames.length; showFrame(frameIndex); }, 1050);
+  };
+
+  startFrames();
+  frameToggle?.addEventListener("click", () => {
+    isPlaying = !isPlaying;
+    frameToggle.textContent = isPlaying ? "Ⅱ" : "▶";
+    frameToggle.setAttribute("aria-label", isPlaying ? "Pause keyframe animation" : "Play keyframe animation");
+    startFrames();
   });
 
   const toast = document.querySelector("[data-toast]");

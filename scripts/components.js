@@ -14,7 +14,7 @@
         </nav>
         <div class="header-actions">
           <div class="social-icons" aria-label="Social links">
-            <button type="button" data-pending aria-label="X">${img(social.x, "")}</button><button type="button" data-pending aria-label="Discord">${img(social.discord, "")}</button><button type="button" data-pending aria-label="Telegram">${img(social.telegram, "")}</button><button type="button" data-pending aria-label="Instagram">${img(social.instagram, "")}</button>
+            <button type="button" data-pending aria-label="X">${img(social.x, "")}</button><button type="button" data-pending aria-label="Telegram">${img(social.telegram, "")}</button><button type="button" data-pending aria-label="Instagram">${img(social.instagram, "")}</button>
           </div>
           ${button("ENTER THE BURN", "#burn", "header-cta")}
         </div>
@@ -24,21 +24,10 @@
   function renderHero() {
     return `
       <section class="hero" id="home" aria-label="BURNEPEP animated introduction">
-        <div class="hero-grid page-width">
-          <article class="hero-video-card">
-            <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="${A.poster}">
-              <source src="${A.video}" type="video/mp4" />
-            </video>
-            <button class="video-toggle" type="button" data-video-toggle aria-label="Pause intro video">Ⅱ</button>
-          </article>
-          <aside class="hero-side-card">
-            <span class="eyebrow">THE NEW PERSPECTIVE</span>
-            <h1>FLIP THE ORDINARY.<br /><em>BURN THE STALE.</em></h1>
-            <p>BURNEPEP turns internet culture into a brighter, louder movement.</p>
-            <div class="hero-points"><span>MEME CULTURE</span><span>COMMUNITY</span><span>BRIGHTER TOMORROW</span></div>
-            ${button("ENTER THE BURN", "#community")}
-            ${img(A.manifesto.slogan, "Not a meme. A new beginning.", "hero-sticker")}
-          </aside>
+        <div class="keyframe-stage page-width" aria-label="BURNEPEP keyframe animation">
+          ${A.frames.map((src, index) => img(src, "BURNEPEP animation keyframe", `keyframe-frame${index === 0 ? " is-active" : ""}`)).join("")}
+          <div class="keyframe-meta"><span>BURNEPEP / INTRO</span><b data-frame-count>01 / 08</b></div>
+          <button class="keyframe-toggle" type="button" data-keyframe-toggle aria-label="Pause keyframe animation">Ⅱ</button>
         </div>
       </section>`;
   }
@@ -86,8 +75,8 @@
 
   function renderCommunity() {
     const rows = [
-      ["discord", "DISCORD", "Join the community"], ["x", "X / TWITTER", "Follow the movement"], ["telegram", "TELEGRAM", "Chat with frens"], ["gallery", "GALLERY", "Fan art & memes"],
-    ].map(([icon, title, caption]) => `<button type="button" class="social-row" data-pending>${img(A.community.socialIcons[icon], "")}<span><b>${title}</b><small>${caption}</small></span><i>›</i></button>`).join("");
+      ["x", "X / TWITTER", "Follow the movement"], ["telegram", "TELEGRAM", "Chat with frens"], ["gallery", "GALLERY", "Fan art & memes"],
+    ].map(([icon, title, caption]) => `<button type="button" class="social-row" data-pending>${img(A.community.socialIcons[icon], "")}<span><b>${title}</b><small>${caption}</small></span><i aria-hidden="true">→</i></button>`).join("");
     return `
       <section class="paper-section community" id="community">
         <div class="community-inner page-width">
@@ -129,9 +118,8 @@
     return `
       <section class="bottom-cta" id="burn">
         <div class="bottom-cta-inner page-width">
-          ${img(A.cta.left, "Flip burn reborn", "cta-left")}
-          <div class="cta-center">${img(A.cta.center, "BURNEPEP $BEPEP", "cta-brand")}${img(A.cta.tagline, "Same frog. Brighter tomorrow.", "cta-tagline")}${button("ENTER THE BURN", "#home")}</div>
-          ${img(A.cta.right, "BURNEPEP character and brighter tomorrow sign", "cta-right")}
+          ${img(A.cta.banner, "Flip burn reborn — BURNEPEP $BEPEP", "cta-banner")}
+          <a class="cta-hotspot" href="#home"><span class="sr-only">Enter the burn</span></a>
         </div>
       </section>
       ${divider(A.texture.ctaFooter)}`;

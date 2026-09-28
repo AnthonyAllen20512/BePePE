@@ -10,6 +10,7 @@
     alpha,
     video: "./video/jimeng-2026-09-28-1906-10秒低算力趣味meme动画，严格参考上传的涂鸦画面：绿色佩佩蛙在米黄色复古涂鸦....mp4",
     poster: "./video/1.png",
+    frames: ["./keyframes/burn-frame-01.png", "./keyframes/burn-frame-02.png", "./keyframes/burn-frame-03.png", "./keyframes/burn-frame-04.png", "./keyframes/burn-frame-05.png", "./keyframes/burn-frame-06.png", "./keyframes/burn-frame-07.png", "./keyframes/burn-frame-08.png"],
     shared: {
       brand: alpha("01_shared", "B01_header-brand"),
       footerBrand: alpha("01_shared", "B10_footer-brand"),
@@ -67,6 +68,7 @@
       ],
     },
     cta: {
+      banner: asset("00_sections", "L07_bottom-cta"),
       left: asset("06_bottom_cta", "A02_left-composition"),
       center: asset("06_bottom_cta", "A03_center-brand"),
       tagline: alpha("06_bottom_cta", "A06_same-frog-tagline"),
