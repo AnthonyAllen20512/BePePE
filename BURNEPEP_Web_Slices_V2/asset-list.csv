@@ -1,0 +1,119 @@
+﻿ID,分类,名称,宽px,高px,原图坐标,PNG,WebP,透明PNG,备注
+L01,完整板块,首屏视频以下完整长图,941,1248,"[0, 424, 941, 1672]",png/00_sections/L01_page-below-video.png,webp/00_sections/L01_page-below-video.webp,,整区原像素切图；与独立素材同时保留，用于核对布局、纹理和叠压关系。
+L02,完整板块,公共导航栏,941,51,"[0, 0, 941, 51]",png/00_sections/L02_navigation.png,webp/00_sections/L02_navigation.webp,,整区原像素切图；与独立素材同时保留，用于核对布局、纹理和叠压关系。
+L03,完整板块,Manifesto 完整板块,941,206,"[0, 424, 941, 630]",png/00_sections/L03_manifesto.png,webp/00_sections/L03_manifesto.webp,,整区原像素切图；与独立素材同时保留，用于核对布局、纹理和叠压关系。
+L04,完整板块,Token Highlights 完整板块,941,346,"[0, 630, 941, 976]",png/00_sections/L04_token-highlights.png,webp/00_sections/L04_token-highlights.webp,,整区原像素切图；与独立素材同时保留，用于核对布局、纹理和叠压关系。
+L05,完整板块,Community 完整板块,941,231,"[0, 976, 941, 1207]",png/00_sections/L05_community.png,webp/00_sections/L05_community.webp,,整区原像素切图；与独立素材同时保留，用于核对布局、纹理和叠压关系。
+L06,完整板块,Roadmap 完整板块,941,146,"[0, 1207, 941, 1353]",png/00_sections/L06_roadmap.png,webp/00_sections/L06_roadmap.webp,,整区原像素切图；与独立素材同时保留，用于核对布局、纹理和叠压关系。
+L07,完整板块,底部 CTA 完整横幅,941,223,"[0, 1353, 941, 1576]",png/00_sections/L07_bottom-cta.png,webp/00_sections/L07_bottom-cta.webp,,整区原像素切图；与独立素材同时保留，用于核对布局、纹理和叠压关系。
+L08,完整板块,完整页脚,941,96,"[0, 1576, 941, 1672]",png/00_sections/L08_footer.png,webp/00_sections/L08_footer.webp,,整区原像素切图；与独立素材同时保留，用于核对布局、纹理和叠压关系。
+L09,完整板块,Token 四卡片组合,896,270,"[23, 697, 919, 967]",png/00_sections/L09_four-token-cards.png,webp/00_sections/L09_four-token-cards.webp,,整区原像素切图；与独立素材同时保留，用于核对布局、纹理和叠压关系。
+L10,完整板块,Roadmap 四阶段组合,648,129,"[258, 1214, 906, 1343]",png/00_sections/L10_four-roadmap-cards.png,webp/00_sections/L10_four-roadmap-cards.webp,,整区原像素切图；与独立素材同时保留，用于核对布局、纹理和叠压关系。
+B01,公共导航与页脚,导航完整品牌标识,209,47,"[53, 2, 262, 49]",png/01_shared/B01_header-brand.png,webp/01_shared/B01_header-brand.webp,transparent_png/01_shared/B01_header-brand_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+B02,公共导航与页脚,导航皇冠,47,41,"[54, 8, 101, 49]",png/01_shared/B02_header-crown.png,webp/01_shared/B02_header-crown.webp,transparent_png/01_shared/B02_header-crown_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+B03,公共导航与页脚,导航 BURNEPEP 字标,160,47,"[102, 2, 262, 49]",png/01_shared/B03_header-wordmark.png,webp/01_shared/B03_header-wordmark.webp,transparent_png/01_shared/B03_header-wordmark_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+B04,公共导航与页脚,导航 ENTER THE BURN 按钮,139,42,"[793, 5, 932, 47]",png/01_shared/B04_header-button.png,webp/01_shared/B04_header-button.webp,transparent_png/01_shared/B04_header-button_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+B05,公共导航与页脚,导航社交图标组,114,28,"[672, 12, 786, 40]",png/01_shared/B05_header-socials.png,webp/01_shared/B05_header-socials.webp,transparent_png/01_shared/B05_header-socials_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+B06,公共导航与页脚,导航 X 图标,23,23,"[674, 14, 697, 37]",png/01_shared/B06_header-x.png,webp/01_shared/B06_header-x.webp,transparent_png/01_shared/B06_header-x_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+B07,公共导航与页脚,导航 Discord 图标,23,21,"[703, 15, 726, 36]",png/01_shared/B07_header-discord.png,webp/01_shared/B07_header-discord.webp,transparent_png/01_shared/B07_header-discord_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+B08,公共导航与页脚,导航 Telegram 图标,21,22,"[731, 14, 752, 36]",png/01_shared/B08_header-telegram.png,webp/01_shared/B08_header-telegram.webp,transparent_png/01_shared/B08_header-telegram_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+B09,公共导航与页脚,导航 Instagram 图标,23,25,"[760, 13, 783, 38]",png/01_shared/B09_header-instagram.png,webp/01_shared/B09_header-instagram.webp,transparent_png/01_shared/B09_header-instagram_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+B10,公共导航与页脚,页脚完整品牌标识,166,40,"[27, 1584, 193, 1624]",png/01_shared/B10_footer-brand.png,webp/01_shared/B10_footer-brand.webp,transparent_png/01_shared/B10_footer-brand_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+B11,公共导航与页脚,页脚口号与皇冠,184,33,"[734, 1590, 918, 1623]",png/01_shared/B11_footer-tagline.png,webp/01_shared/B11_footer-tagline.webp,transparent_png/01_shared/B11_footer-tagline_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+B12,公共导航与页脚,页脚社交图标组,116,29,"[606, 1595, 722, 1624]",png/01_shared/B12_footer-socials.png,webp/01_shared/B12_footer-socials.webp,transparent_png/01_shared/B12_footer-socials_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+B13,公共导航与页脚,页脚右侧皇冠,35,31,"[882, 1591, 917, 1622]",png/01_shared/B13_footer-crown.png,webp/01_shared/B13_footer-crown.webp,transparent_png/01_shared/B13_footer-crown_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+B14,公共导航与页脚,页脚导航链接参考,278,25,"[204, 1598, 482, 1623]",png/01_shared/B14_footer-menu.png,webp/01_shared/B14_footer-menu.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+B15,公共导航与页脚,页脚 Terms / Privacy / Contact,131,20,"[777, 1630, 908, 1650]",png/01_shared/B15_footer-legal-links.png,webp/01_shared/B15_footer-legal-links.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+B16,公共导航与页脚,页脚版权行参考,192,21,"[34, 1628, 226, 1649]",png/01_shared/B16_footer-copyright.png,webp/01_shared/B16_footer-copyright.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+M01,Manifesto 宣言,宣言标题、荧光涂抹与皇冠,238,179,"[19, 442, 257, 621]",png/02_manifesto/M01_manifesto-title.png,webp/02_manifesto/M01_manifesto-title.webp,transparent_png/02_manifesto/M01_manifesto-title_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+M02,Manifesto 宣言,青蛙特写与做旧相框,319,200,"[493, 430, 812, 630]",png/02_manifesto/M02_frog-portrait.png,webp/02_manifesto/M02_frog-portrait.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+M03,Manifesto 宣言,宣言正文参考,231,122,"[261, 449, 492, 571]",png/02_manifesto/M03_manifesto-body.png,webp/02_manifesto/M03_manifesto-body.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+M04,Manifesto 宣言,SAME FROG 口号与下划线,219,42,"[263, 578, 482, 620]",png/02_manifesto/M04_same-frog-tagline.png,webp/02_manifesto/M04_same-frog-tagline.webp,transparent_png/02_manifesto/M04_same-frog-tagline_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+M05,Manifesto 宣言,右侧口号、皇冠、蝴蝶组合,138,190,"[803, 435, 941, 625]",png/02_manifesto/M05_right-slogan-group.png,webp/02_manifesto/M05_right-slogan-group.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+M06,Manifesto 宣言,NOT A MEME 手写口号,134,88,"[803, 486, 937, 574]",png/02_manifesto/M06_not-a-meme-slogan.png,webp/02_manifesto/M06_not-a-meme-slogan.webp,transparent_png/02_manifesto/M06_not-a-meme-slogan_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+M07,Manifesto 宣言,宣言标题左下皇冠,54,56,"[23, 565, 77, 621]",png/02_manifesto/M07_title-crown.png,webp/02_manifesto/M07_title-crown.webp,transparent_png/02_manifesto/M07_title-crown_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+M08,Manifesto 宣言,宣言右上皇冠,61,51,"[859, 436, 920, 487]",png/02_manifesto/M08_right-crown.png,webp/02_manifesto/M08_right-crown.webp,transparent_png/02_manifesto/M08_right-crown_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+M09,Manifesto 宣言,宣言右下蝴蝶标识,65,52,"[862, 572, 927, 624]",png/02_manifesto/M09_butterfly.png,webp/02_manifesto/M09_butterfly.webp,transparent_png/02_manifesto/M09_butterfly_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+M10,Manifesto 宣言,青蛙相框左下皇冠,54,47,"[512, 563, 566, 610]",png/02_manifesto/M10_portrait-crown.png,webp/02_manifesto/M10_portrait-crown.webp,transparent_png/02_manifesto/M10_portrait-crown_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+T01,Token 四张卡片,TOKEN HIGHLIGHTS 标题与皇冠,400,63,"[21, 637, 421, 700]",png/03_token/T01_token-title.png,webp/03_token/T01_token-title.webp,transparent_png/03_token/T01_token-title_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+T02,Token 四张卡片,MORE THAN A TOKEN 口号,221,61,"[710, 635, 931, 696]",png/03_token/T02_token-tagline.png,webp/03_token/T02_token-tagline.webp,transparent_png/03_token/T02_token-tagline_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+T03,Token 四张卡片,Token 标题皇冠,45,44,"[375, 649, 420, 693]",png/03_token/T03_token-crown.png,webp/03_token/T03_token-crown.webp,transparent_png/03_token/T03_token-crown_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+T04,Token 四张卡片,Meme Culture 完整卡片,219,269,"[23, 698, 242, 967]",png/03_token/T04_meme-culture-card.png,webp/03_token/T04_meme-culture-card.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+T05,Token 四张卡片,叠放卡牌独立插画,197,161,"[36, 703, 233, 864]",png/03_token/T05_meme-culture-art.png,webp/03_token/T05_meme-culture-art.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+T06,Token 四张卡片,MEME CULTURE 标题,194,31,"[38, 861, 232, 892]",png/03_token/T06_meme-culture-title.png,webp/03_token/T06_meme-culture-title.webp,transparent_png/03_token/T06_meme-culture-title_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+T07,Token 四张卡片,Community Energy 完整卡片,218,269,"[249, 698, 467, 967]",png/03_token/T07_community-energy-card.png,webp/03_token/T07_community-energy-card.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+T08,Token 四张卡片,人群与旗帜独立插画,212,153,"[252, 706, 464, 859]",png/03_token/T08_community-energy-art.png,webp/03_token/T08_community-energy-art.webp,transparent_png/03_token/T08_community-energy-art_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+T09,Token 四张卡片,COMMUNITY ENERGY 标题,198,31,"[265, 861, 463, 892]",png/03_token/T09_community-energy-title.png,webp/03_token/T09_community-energy-title.webp,transparent_png/03_token/T09_community-energy-title_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+T10,Token 四张卡片,Burn Mechanic 完整卡片,221,269,"[474, 698, 695, 967]",png/03_token/T10_burn-mechanic-card.png,webp/03_token/T10_burn-mechanic-card.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+T11,Token 四张卡片,火焰金币独立插画,203,159,"[485, 701, 688, 860]",png/03_token/T11_burn-mechanic-art.png,webp/03_token/T11_burn-mechanic-art.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+T12,Token 四张卡片,BURN MECHANIC 标题,201,31,"[489, 861, 690, 892]",png/03_token/T12_burn-mechanic-title.png,webp/03_token/T12_burn-mechanic-title.webp,transparent_png/03_token/T12_burn-mechanic-title_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+T13,Token 四张卡片,Visual Identity 完整卡片,218,269,"[701, 698, 919, 967]",png/03_token/T13_visual-identity-card.png,webp/03_token/T13_visual-identity-card.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+T14,Token 四张卡片,倒立青蛙独立插画,184,160,"[723, 700, 907, 860]",png/03_token/T14_visual-identity-art.png,webp/03_token/T14_visual-identity-art.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+T15,Token 四张卡片,VISUAL IDENTITY 标题,184,31,"[723, 861, 907, 892]",png/03_token/T15_visual-identity-title.png,webp/03_token/T15_visual-identity-title.webp,transparent_png/03_token/T15_visual-identity-title_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+T16,Token 四张卡片,人群插画中的蝴蝶旗帜,78,69,"[337, 706, 415, 775]",png/03_token/T16_flag-detail.png,webp/03_token/T16_flag-detail.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+T17,Token 四张卡片,Meme Culture 正文参考,192,67,"[40, 891, 232, 958]",png/03_token/T17_meme-culture-copy.png,webp/03_token/T17_meme-culture-copy.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+T18,Token 四张卡片,Community Energy 正文参考,192,67,"[266, 891, 458, 958]",png/03_token/T18_community-energy-copy.png,webp/03_token/T18_community-energy-copy.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+T19,Token 四张卡片,Burn Mechanic 正文参考,193,67,"[491, 891, 684, 958]",png/03_token/T19_burn-mechanic-copy.png,webp/03_token/T19_burn-mechanic-copy.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+T20,Token 四张卡片,Visual Identity 正文参考,185,67,"[725, 891, 910, 958]",png/03_token/T20_visual-identity-copy.png,webp/03_token/T20_visual-identity-copy.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+C01,Community 社群,COMMUNITY 标题、口号与皇冠,269,96,"[16, 983, 285, 1079]",png/04_community/C01_community-title.png,webp/04_community/C01_community-title.webp,transparent_png/04_community/C01_community-title_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+C02,Community 社群,Community 正文参考,248,76,"[35, 1077, 283, 1153]",png/04_community/C02_community-body.png,webp/04_community/C02_community-body.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+C03,Community 社群,JOIN OUR COMMUNITY 按钮,186,37,"[29, 1156, 215, 1193]",png/04_community/C03_join-community-button.png,webp/04_community/C03_join-community-button.webp,transparent_png/04_community/C03_join-community-button_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+C04,Community 社群,中央完整拼贴与火焰碎石,490,231,"[249, 976, 739, 1207]",png/04_community/C04_community-collage.png,webp/04_community/C04_community-collage.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+C05,Community 社群,MEMES BURN BRIGHTER 倾斜海报,116,162,"[277, 1006, 393, 1168]",png/04_community/C05_memes-burn-poster.png,webp/04_community/C05_memes-burn-poster.webp,transparent_png/04_community/C05_memes-burn-poster_alpha.png,原图矩形切片；海报局部被相邻对象遮挡，未补画被遮挡内容。透明版仅保留可见轮廓。
+C06,Community 社群,STAY INVERTED 拍立得,131,193,"[374, 1000, 505, 1193]",png/04_community/C06_stay-inverted-polaroid.png,webp/04_community/C06_stay-inverted-polaroid.webp,transparent_png/04_community/C06_stay-inverted-polaroid_alpha.png,原图矩形切片；海报局部被相邻对象遮挡，未补画被遮挡内容。透明版仅保留可见轮廓。
+C07,Community 社群,拍立得中的墨镜青蛙,112,131,"[384, 1014, 496, 1145]",png/04_community/C07_sunglasses-frog.png,webp/04_community/C07_sunglasses-frog.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+C08,Community 社群,STAY INVERTED 题注,112,44,"[390, 1143, 502, 1187]",png/04_community/C08_stay-inverted-caption.png,webp/04_community/C08_stay-inverted-caption.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+C09,Community 社群,BURNEPEP 圆形徽章,147,145,"[497, 1013, 644, 1158]",png/04_community/C09_round-badge.png,webp/04_community/C09_round-badge.webp,transparent_png/04_community/C09_round-badge_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+C10,Community 社群,GOOD FROGS 海报（部分被贴纸遮挡）,96,181,"[640, 994, 736, 1175]",png/04_community/C10_good-frogs-poster.png,webp/04_community/C10_good-frogs-poster.webp,transparent_png/04_community/C10_good-frogs-poster_alpha.png,原图矩形切片；海报局部被相邻对象遮挡，未补画被遮挡内容。透明版仅保留可见轮廓。
+C11,Community 社群,底部青蛙贴纸,107,90,"[616, 1117, 723, 1207]",png/04_community/C11_frog-sticker.png,webp/04_community/C11_frog-sticker.webp,transparent_png/04_community/C11_frog-sticker_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+C12,Community 社群,左下火焰与碎石局部,127,117,"[252, 1090, 379, 1207]",png/04_community/C12_left-flames-rocks.png,webp/04_community/C12_left-flames-rocks.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+C13,Community 社群,完整社交入口面板,186,198,"[739, 996, 925, 1194]",png/04_community/C13_social-panel.png,webp/04_community/C13_social-panel.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+C14,Community 社群,Discord 入口整行,178,49,"[744, 998, 922, 1047]",png/04_community/C14_discord-row.png,webp/04_community/C14_discord-row.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+C15,Community 社群,X / Twitter 入口整行,178,46,"[744, 1046, 922, 1092]",png/04_community/C15_x-row.png,webp/04_community/C15_x-row.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+C16,Community 社群,Telegram 入口整行,178,48,"[744, 1091, 922, 1139]",png/04_community/C16_telegram-row.png,webp/04_community/C16_telegram-row.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+C17,Community 社群,Gallery 入口整行,178,53,"[744, 1138, 922, 1191]",png/04_community/C17_gallery-row.png,webp/04_community/C17_gallery-row.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+C18,Community 社群,Discord 图标,28,30,"[755, 1006, 783, 1036]",png/04_community/C18_discord-icon.png,webp/04_community/C18_discord-icon.webp,transparent_png/04_community/C18_discord-icon_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+C19,Community 社群,X 图标,28,31,"[755, 1052, 783, 1083]",png/04_community/C19_x-icon.png,webp/04_community/C19_x-icon.webp,transparent_png/04_community/C19_x-icon_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+C20,Community 社群,Telegram 图标,28,28,"[755, 1098, 783, 1126]",png/04_community/C20_telegram-icon.png,webp/04_community/C20_telegram-icon.webp,transparent_png/04_community/C20_telegram-icon_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+C21,Community 社群,Gallery 图标,28,29,"[755, 1145, 783, 1174]",png/04_community/C21_gallery-icon.png,webp/04_community/C21_gallery-icon.webp,transparent_png/04_community/C21_gallery-icon_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+C22,Community 社群,Community 标题皇冠,41,47,"[244, 1012, 285, 1059]",png/04_community/C22_community-crown.png,webp/04_community/C22_community-crown.webp,transparent_png/04_community/C22_community-crown_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+C23,Community 社群,倾斜海报小皇冠,38,32,"[290, 1030, 328, 1062]",png/04_community/C23_poster-crown.png,webp/04_community/C23_poster-crown.webp,transparent_png/04_community/C23_poster-crown_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+C24,Community 社群,右侧火焰局部（含叠压）,110,230,"[591, 977, 701, 1207]",png/04_community/C24_right-flames.png,webp/04_community/C24_right-flames.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+C25,Community 社群,中央上缘碎石与纸片局部,337,42,"[283, 976, 620, 1018]",png/04_community/C25_upper-rocks.png,webp/04_community/C25_upper-rocks.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+R01,Roadmap 路线图,ROADMAP 标题、口号与皇冠,236,128,"[18, 1215, 254, 1343]",png/05_roadmap/R01_roadmap-title.png,webp/05_roadmap/R01_roadmap-title.webp,transparent_png/05_roadmap/R01_roadmap-title_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+R02,Roadmap 路线图,FLIPPING TODAY 荧光口号,216,63,"[35, 1280, 251, 1343]",png/05_roadmap/R02_roadmap-tagline.png,webp/05_roadmap/R02_roadmap-tagline.webp,transparent_png/05_roadmap/R02_roadmap-tagline_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+R03,Roadmap 路线图,Roadmap 标题皇冠,44,37,"[210, 1263, 254, 1300]",png/05_roadmap/R03_roadmap-crown.png,webp/05_roadmap/R03_roadmap-crown.webp,transparent_png/05_roadmap/R03_roadmap-crown_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+R04,Roadmap 路线图,01 IGNITE 阶段卡片,146,125,"[258, 1216, 404, 1341]",png/05_roadmap/R04_ignite-card.png,webp/05_roadmap/R04_ignite-card.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+R05,Roadmap 路线图,02 FLIP 阶段卡片,148,125,"[420, 1216, 568, 1341]",png/05_roadmap/R05_flip-card.png,webp/05_roadmap/R05_flip-card.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+R06,Roadmap 路线图,03 BURN 阶段卡片,151,125,"[585, 1216, 736, 1341]",png/05_roadmap/R06_burn-card.png,webp/05_roadmap/R06_burn-card.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+R07,Roadmap 路线图,04 BEYOND 阶段卡片,155,125,"[750, 1216, 905, 1341]",png/05_roadmap/R07_beyond-card.png,webp/05_roadmap/R07_beyond-card.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+R08,Roadmap 路线图,Ignite 火焰图标,40,58,"[331, 1221, 371, 1279]",png/05_roadmap/R08_ignite-flame.png,webp/05_roadmap/R08_ignite-flame.webp,transparent_png/05_roadmap/R08_ignite-flame_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+R09,Roadmap 路线图,Flip 蝴蝶图标,48,46,"[475, 1229, 523, 1275]",png/05_roadmap/R09_flip-butterfly.png,webp/05_roadmap/R09_flip-butterfly.webp,transparent_png/05_roadmap/R09_flip-butterfly_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+R10,Roadmap 路线图,Burn 火焰图标,42,59,"[657, 1222, 699, 1281]",png/05_roadmap/R10_burn-flame.png,webp/05_roadmap/R10_burn-flame.webp,transparent_png/05_roadmap/R10_burn-flame_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+R11,Roadmap 路线图,Beyond 旋涡图标,66,61,"[825, 1227, 891, 1288]",png/05_roadmap/R11_beyond-vortex.png,webp/05_roadmap/R11_beyond-vortex.webp,transparent_png/05_roadmap/R11_beyond-vortex_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+R12,Roadmap 路线图,阶段连接箭头 1,32,36,"[396, 1263, 428, 1299]",png/05_roadmap/R12_arrow-1.png,webp/05_roadmap/R12_arrow-1.webp,transparent_png/05_roadmap/R12_arrow-1_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+R13,Roadmap 路线图,阶段连接箭头 2,32,36,"[561, 1263, 593, 1299]",png/05_roadmap/R13_arrow-2.png,webp/05_roadmap/R13_arrow-2.webp,transparent_png/05_roadmap/R13_arrow-2_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+R14,Roadmap 路线图,阶段连接箭头 3,31,36,"[728, 1263, 759, 1299]",png/05_roadmap/R14_arrow-3.png,webp/05_roadmap/R14_arrow-3.webp,transparent_png/05_roadmap/R14_arrow-3_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+A01,底部 CTA 横幅,FLIP BURN REBORN 左侧标语,213,171,"[23, 1370, 236, 1541]",png/06_bottom_cta/A01_flip-burn-reborn.png,webp/06_bottom_cta/A01_flip-burn-reborn.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+A02,底部 CTA 横幅,左侧标语、火焰与碎石组合,359,223,"[0, 1353, 359, 1576]",png/06_bottom_cta/A02_left-composition.png,webp/06_bottom_cta/A02_left-composition.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+A03,底部 CTA 横幅,中央皇冠、BURNEPEP 与币名,303,134,"[326, 1356, 629, 1490]",png/06_bottom_cta/A03_center-brand.png,webp/06_bottom_cta/A03_center-brand.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+A04,底部 CTA 横幅,横幅上方皇冠,48,36,"[454, 1356, 502, 1392]",png/06_bottom_cta/A04_crown.png,webp/06_bottom_cta/A04_crown.webp,transparent_png/06_bottom_cta/A04_crown_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+A05,底部 CTA 横幅,$BEPEP 币名字样,146,47,"[420, 1443, 566, 1490]",png/06_bottom_cta/A05_bepep-ticker.png,webp/06_bottom_cta/A05_bepep-ticker.webp,transparent_png/06_bottom_cta/A05_bepep-ticker_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+A06,底部 CTA 横幅,中央 SAME FROG 口号,233,25,"[362, 1485, 595, 1510]",png/06_bottom_cta/A06_same-frog-tagline.png,webp/06_bottom_cta/A06_same-frog-tagline.webp,transparent_png/06_bottom_cta/A06_same-frog-tagline_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+A07,底部 CTA 横幅,ENTER THE BURN 按钮,205,52,"[369, 1512, 574, 1564]",png/06_bottom_cta/A07_enter-burn-button.png,webp/06_bottom_cta/A07_enter-burn-button.webp,transparent_png/06_bottom_cta/A07_enter-burn-button_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+A08,底部 CTA 横幅,右侧倒立青蛙（原图可见部分）,203,221,"[622, 1355, 825, 1576]",png/06_bottom_cta/A08_frog-visible-body.png,webp/06_bottom_cta/A08_frog-visible-body.webp,,从原图裁切的可见部分。青蛙下半部在原图边界已截断，没有补画。
+A09,底部 CTA 横幅,INTO A BRIGHTER TOMORROW 路牌,146,210,"[795, 1366, 941, 1576]",png/06_bottom_cta/A09_brighter-tomorrow-sign.png,webp/06_bottom_cta/A09_brighter-tomorrow-sign.webp,transparent_png/06_bottom_cta/A09_brighter-tomorrow-sign_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+A10,底部 CTA 横幅,右侧青蛙、火焰与路牌组合,325,223,"[616, 1353, 941, 1576]",png/06_bottom_cta/A10_right-composition.png,webp/06_bottom_cta/A10_right-composition.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+A11,底部 CTA 横幅,左下碎石与火焰局部,182,107,"[177, 1469, 359, 1576]",png/06_bottom_cta/A11_left-rocks.png,webp/06_bottom_cta/A11_left-rocks.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+A12,底部 CTA 横幅,左侧纵向火焰装饰（含碎石）,141,223,"[218, 1353, 359, 1576]",png/06_bottom_cta/A12_left-flames.png,webp/06_bottom_cta/A12_left-flames.webp,,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+A13,底部 CTA 横幅,BURNEPEP 手写字标,293,100,"[326, 1380, 619, 1480]",png/06_bottom_cta/A13_wordmark.png,webp/06_bottom_cta/A13_wordmark.webp,transparent_png/06_bottom_cta/A13_wordmark_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+A14,底部 CTA 横幅,路牌上的皇冠,44,28,"[861, 1472, 905, 1500]",png/06_bottom_cta/A14_poster-crown.png,webp/06_bottom_cta/A14_poster-crown.webp,transparent_png/06_bottom_cta/A14_poster-crown_alpha.png,从本次上传图直接裁切；保留原图像素和矩形背景，不是设计源图层。
+X01,纹理与分隔边,无字纸张纹理采样（非无缝）,259,53,"[435, 642, 694, 695]",png/07_textures/X01_paper-sample.png,webp/07_textures/X01_paper-sample.webp,,原图纹理或边沿采样；非无缝贴图。可能带邻近板块局部墨迹。
+X02,纹理与分隔边,黑色纹理采样（非无缝）,215,25,"[479, 1625, 694, 1650]",png/07_textures/X02_dark-sample.png,webp/07_textures/X02_dark-sample.webp,,原图纹理或边沿采样；非无缝贴图。可能带邻近板块局部墨迹。
+X03,纹理与分隔边,Token 与 Community 分隔边,941,12,"[0, 966, 941, 978]",png/07_textures/X03_token-community-divider.png,webp/07_textures/X03_token-community-divider.webp,,原图纹理或边沿采样；非无缝贴图。可能带邻近板块局部墨迹。
+X04,纹理与分隔边,Roadmap 与 CTA 分隔边,941,14,"[0, 1340, 941, 1354]",png/07_textures/X04_roadmap-cta-divider.png,webp/07_textures/X04_roadmap-cta-divider.webp,,原图纹理或边沿采样；非无缝贴图。可能带邻近板块局部墨迹。
+X05,纹理与分隔边,首屏以下左侧做旧边沿,18,1152,"[0, 424, 18, 1576]",png/07_textures/X05_left-distressed-edge.png,webp/07_textures/X05_left-distressed-edge.webp,,原图纹理或边沿采样；非无缝贴图。可能带邻近板块局部墨迹。
+X06,纹理与分隔边,首屏以下右侧做旧边沿,12,1152,"[929, 424, 941, 1576]",png/07_textures/X06_right-distressed-edge.png,webp/07_textures/X06_right-distressed-edge.webp,,原图纹理或边沿采样；非无缝贴图。可能带邻近板块局部墨迹。
+X07,纹理与分隔边,Manifesto 与 Token 分隔边,941,12,"[0, 623, 941, 635]",png/07_textures/X07_manifesto-token-divider.png,webp/07_textures/X07_manifesto-token-divider.webp,,原图纹理或边沿采样；非无缝贴图。可能带邻近板块局部墨迹。
+X08,纹理与分隔边,Community 与 Roadmap 分隔边,941,12,"[0, 1200, 941, 1212]",png/07_textures/X08_community-roadmap-divider.png,webp/07_textures/X08_community-roadmap-divider.webp,,原图纹理或边沿采样；非无缝贴图。可能带邻近板块局部墨迹。
+X09,纹理与分隔边,CTA 与页脚分隔边,941,12,"[0, 1568, 941, 1580]",png/07_textures/X09_cta-footer-divider.png,webp/07_textures/X09_cta-footer-divider.webp,,原图纹理或边沿采样；非无缝贴图。可能带邻近板块局部墨迹。

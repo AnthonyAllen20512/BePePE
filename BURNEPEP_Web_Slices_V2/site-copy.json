@@ -1,0 +1,143 @@
+{
+  "source_note": "手工转录本次上传图的英文文案，保留原有措辞；请在发布前复核。URL 未提供，不生成真实链接。首屏视频文案不在本文件。",
+  "brand": "BURNEPEP",
+  "ticker": "$BEPEP",
+  "nav": [
+    "Manifesto",
+    "Token",
+    "Community",
+    "Roadmap",
+    "Gallery"
+  ],
+  "manifesto": {
+    "title": "THE BURNEPEP MANIFESTO",
+    "paragraphs": [
+      "BURNEPEP is not just a meme. It’s a new perspective. We flip the ordinary, burn the stale, and turn chaos into something brighter.",
+      "A community that refuses to take things seriously, but takes freedom, creativity and culture seriously."
+    ],
+    "tagline": "SAME FROG. BRIGHTER TOMORROW.",
+    "aside": "NOT A MEME. A NEW BEGINNING."
+  },
+  "token": {
+    "title": "TOKEN HIGHLIGHTS",
+    "tagline": "MORE THAN A TOKEN. A CULTURE.",
+    "cards": [
+      {
+        "title": "MEME CULTURE",
+        "body": "Born from internet culture. Powered by creativity. For the degenerates, dreamers and difference makers.",
+        "art_id": "T05"
+      },
+      {
+        "title": "COMMUNITY ENERGY",
+        "body": "A global community that flips perspectives, creates together and burns the boring.",
+        "art_id": "T08"
+      },
+      {
+        "title": "BURN MECHANIC",
+        "body": "Deflationary by design. We burn, we build, we go higher. Less supply. A brighter tomorrow.",
+        "art_id": "T11"
+      },
+      {
+        "title": "VISUAL IDENTITY",
+        "body": "An iconic character. A unique style. Recognizable. Unmistakable. BURNEPEP.",
+        "art_id": "T14"
+      }
+    ]
+  },
+  "community": {
+    "title": "COMMUNITY",
+    "tagline": "PEOPLE FLIP CULTURE.",
+    "body": "BURNEPEP lives through its community. Artists, creators, holders and dreamers from around the world, all flipping the same narrative. Different perspectives. One movement.",
+    "button": "JOIN OUR COMMUNITY",
+    "collage_text": [
+      "MEMES BURN BRIGHTER",
+      "STAY INVERTED.",
+      "GOOD FROGS BURN TOGETHER"
+    ],
+    "socials": [
+      {
+        "label": "DISCORD",
+        "caption": "Join the community",
+        "href": null
+      },
+      {
+        "label": "X / TWITTER",
+        "caption": "Follow the movement",
+        "href": null
+      },
+      {
+        "label": "TELEGRAM",
+        "caption": "Chat with frens",
+        "href": null
+      },
+      {
+        "label": "GALLERY",
+        "caption": "Fan art & memes",
+        "href": null
+      }
+    ]
+  },
+  "roadmap": {
+    "title": "ROADMAP",
+    "tagline": "FLIPPING TODAY. A BRIGHTER TOMORROW.",
+    "stages": [
+      {
+        "number": "01",
+        "title": "IGNITE",
+        "lines": [
+          "Build the foundation.",
+          "Grow the community.",
+          "Spread the word."
+        ],
+        "icon_id": "R08"
+      },
+      {
+        "number": "02",
+        "title": "FLIP",
+        "lines": [
+          "Expand the ecosystem.",
+          "More utilities.",
+          "More chaos."
+        ],
+        "icon_id": "R09"
+      },
+      {
+        "number": "03",
+        "title": "BURN",
+        "lines": [
+          "Activate burn mechanics.",
+          "Reduce supply.",
+          "Increase momentum."
+        ],
+        "icon_id": "R10"
+      },
+      {
+        "number": "04",
+        "title": "BEYOND",
+        "lines": [
+          "A brighter tomorrow.",
+          "More than a meme.",
+          "A lasting culture."
+        ],
+        "icon_id": "R11"
+      }
+    ]
+  },
+  "bottom_cta": {
+    "left": "FLIP BURN REBORN.",
+    "brand": "BURNEPEP",
+    "ticker": "$BEPEP",
+    "tagline": "SAME FROG. BRIGHTER TOMORROW.",
+    "button": "ENTER THE BURN",
+    "sign": "INTO A BRIGHTER TOMORROW."
+  },
+  "footer": {
+    "copyright": "© 2024 BURNEPEP. All rights reserved.",
+    "legal_links": [
+      "Terms",
+      "Privacy",
+      "Contact"
+    ],
+    "year_note": "2024 为图上原文，未自动更改。"
+  }
+}
