@@ -9,16 +9,13 @@
     asset,
     alpha,
     hero: {
-      frames: [
-        "./keyframes/burn-frame-01.png",
-        "./keyframes/burn-frame-02.png",
-        "./keyframes/burn-frame-03.png",
-        "./keyframes/burn-frame-04.png",
-        "./keyframes/burn-frame-05.png",
-        "./keyframes/burn-frame-06.png",
-        "./keyframes/burn-frame-07.png",
-        "./keyframes/burn-frame-08.png",
-      ],
+      sequence: {
+        prefix: "./assets/hero-sequence/frame-",
+        extension: ".webp",
+        digits: 3,
+        frameCount: 242,
+        fps: 10,
+      },
     },
     shared: {
       brand: alpha("01_shared", "B01_header-brand"),

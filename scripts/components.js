@@ -22,13 +22,16 @@
   }
 
   function renderHero() {
+    const sequence = A.hero.sequence;
+    const firstFrame = `${sequence.prefix}${String(1).padStart(sequence.digits, "0")}${sequence.extension}`;
     return `
       <section class="hero" id="home" aria-label="BURNEPEP animated introduction">
-        <div class="keyframe-stage page-width" data-keyframe-stage aria-label="BURNEPEP eight-frame animation. Drag left or right to scrub through the sequence.">
-          ${A.hero.frames.map((src, index) => `<img class="keyframe-frame${index === 0 ? " is-active" : ""}" src="${src}" alt="" ${index === 0 ? "fetchpriority=\"high\"" : ""} />`).join("")}
+        <div class="keyframe-stage page-width" data-sequence-stage data-sequence-total="${sequence.frameCount}" data-frame-prefix="${sequence.prefix}" data-frame-extension="${sequence.extension}" data-frame-digits="${sequence.digits}" data-frame-fps="${sequence.fps}" aria-label="BURNEPEP hero animation. Use scroll or drag to explore the video.">
+          <img class="sequence-fallback" src="${firstFrame}" alt="" fetchpriority="high" />
+          <canvas class="sequence-canvas" data-sequence-canvas role="img" aria-label="BURNEPEP animated video sequence"></canvas>
           <div class="keyframe-ui">
             <button class="keyframe-toggle" type="button" data-keyframe-toggle aria-label="Pause keyframe animation">Ⅱ</button>
-            <label class="keyframe-scrubber"><span>KEYFRAME SCRUB</span><input type="range" min="0" max="7" value="0" step="1" data-keyframe-scrubber aria-label="Keyframe" /><b data-frame-count>01 / 08</b></label>
+            <label class="keyframe-scrubber"><span>SCROLL / DRAG</span><input type="range" min="0" max="${sequence.frameCount - 1}" value="0" step="1" data-keyframe-scrubber aria-label="Video frame" /><b data-frame-count>001 / ${String(sequence.frameCount).padStart(3, "0")}</b></label>
           </div>
         </div>
       </section>`;
