@@ -24,6 +24,11 @@
   function renderHero() {
     const sequence = A.hero.sequence;
     const firstFrame = `${sequence.prefix}${String(1).padStart(sequence.digits, "0")}${sequence.extension}`;
+    const particles = [
+      [8, 18, 4, 12, 0], [16, 73, 3, 17, -600], [27, 28, 5, 14, -1900], [38, 82, 3, 18, -850],
+      [53, 16, 4, 16, -1300], [65, 71, 3, 13, -2400], [74, 30, 5, 19, -500], [88, 17, 3, 15, -1600],
+      [92, 66, 4, 18, -1000], [45, 48, 2, 12, -2100], [5, 48, 2, 20, -300], [83, 88, 2, 15, -2700],
+    ].map(([x, y, size, duration, delay]) => `<i class="scene-particle" style="--particle-x:${x}%;--particle-y:${y}%;--particle-size:${size}px;--particle-duration:${duration}s;--particle-delay:${delay}ms"></i>`).join("");
     return `
       <section class="hero" id="home" aria-label="BURNEPEP animated introduction">
         <div class="keyframe-stage page-width" data-sequence-stage data-sequence-total="${sequence.frameCount}" data-frame-prefix="${sequence.prefix}" data-frame-extension="${sequence.extension}" data-frame-digits="${sequence.digits}" data-frame-fps="${sequence.fps}" aria-label="BURNEPEP hero animation. Use scroll or drag to explore the video.">
@@ -31,11 +36,15 @@
             <img class="sequence-fallback" src="${firstFrame}" alt="" fetchpriority="high" />
             <canvas class="sequence-canvas" data-sequence-canvas role="img" aria-label="BURNEPEP animated video sequence"></canvas>
           </div>
+          <div class="scene-spotlight" aria-hidden="true"></div>
           <img class="sequence-debris" src="${A.hero.foregroundDebris}" alt="" aria-hidden="true" />
+          <div class="scene-particle-field" aria-hidden="true">${particles}</div>
+          <i class="scene-reticle" aria-hidden="true"></i>
+          <i class="scene-pulse" aria-hidden="true"></i>
           <div class="keyframe-ui">
             <button class="keyframe-toggle" type="button" data-keyframe-toggle aria-label="Pause keyframe animation">Ⅱ</button>
-            <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false">TILT</button>
-            <label class="keyframe-scrubber"><span>SCROLL / DRAG</span><input type="range" min="0" max="${sequence.frameCount - 1}" value="0" step="1" data-keyframe-scrubber aria-label="Video frame" /><b data-frame-count>001 / ${String(sequence.frameCount).padStart(3, "0")}</b></label>
+            <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false">GYRO</button>
+            <label class="keyframe-scrubber"><span>DRAG / WHEEL</span><input type="range" min="0" max="${sequence.frameCount - 1}" value="0" step="1" data-keyframe-scrubber aria-label="Video frame" /><b data-frame-count>001 / ${String(sequence.frameCount).padStart(3, "0")}</b></label>
           </div>
         </div>
       </section>`;

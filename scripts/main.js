@@ -31,29 +31,44 @@
     let pointerY = 0;
     let tiltX = 0;
     let tiltY = 0;
+    let gravityX = 0;
+    let gravityY = 0;
     let motionEnabled = false;
+    let pointerActive = false;
+    let frameMomentum = 0;
+    let resumeAfterMomentum = false;
+    let lastDragFrame = 0;
+    let lastDragTime = 0;
+    let pulseTimeout;
     let lastPreloadCenter = -Infinity;
-    const supportsDeviceMotion = "DeviceOrientationEvent" in window;
+    const supportsDeviceMotion = "DeviceOrientationEvent" in window || "DeviceMotionEvent" in window;
 
     const clampFrame = (frame) => Math.max(0, Math.min(lastFrame, frame));
     const clampUnit = (value) => Math.max(-1, Math.min(1, value));
+    const clampMomentum = (value) => Math.max(-90, Math.min(90, value));
     const frameSource = (index) => `${framePrefix}${String(index + 1).padStart(frameDigits, "0")}${frameExtension}`;
     const visibleFrame = () => Math.round(clampFrame(easedFrame));
 
     const updateSceneDepth = () => {
-      const sceneX = pointerX * 15 + tiltX * 11;
-      const sceneY = pointerY * 10 + tiltY * 8;
+      const sceneX = pointerX * 17 + tiltX * 15 + gravityX * 7;
+      const sceneY = pointerY * 11 + tiltY * 11 + gravityY * 6;
       stage.style.setProperty("--scene-x", `${sceneX.toFixed(2)}px`);
       stage.style.setProperty("--scene-y", `${sceneY.toFixed(2)}px`);
-      stage.style.setProperty("--scene-rotate", `${(pointerX * 0.3 + tiltX * 0.22).toFixed(3)}deg`);
-      stage.style.setProperty("--debris-x", `${(-pointerX * 27 - tiltX * 20).toFixed(2)}px`);
-      stage.style.setProperty("--debris-y", `${(-pointerY * 18 - tiltY * 13).toFixed(2)}px`);
-      stage.style.setProperty("--debris-rotate", `${(-pointerX * 0.9 - tiltX * 0.55).toFixed(3)}deg`);
+      stage.style.setProperty("--scene-rotate", `${(pointerX * 0.38 + tiltX * 0.32 + gravityX * 0.18).toFixed(3)}deg`);
+      stage.style.setProperty("--debris-x", `${(-pointerX * 31 - tiltX * 24 - gravityX * 12).toFixed(2)}px`);
+      stage.style.setProperty("--debris-y", `${(-pointerY * 21 - tiltY * 17 - gravityY * 9).toFixed(2)}px`);
+      stage.style.setProperty("--debris-rotate", `${(-pointerX * 1.15 - tiltX * 0.78 - gravityX * 0.42).toFixed(3)}deg`);
+      stage.style.setProperty("--particle-field-x", `${(-pointerX * 10 + tiltX * 9 + gravityX * 5).toFixed(2)}px`);
+      stage.style.setProperty("--particle-field-y", `${(-pointerY * 8 + tiltY * 7 + gravityY * 4).toFixed(2)}px`);
+      stage.style.setProperty("--spotlight-x", `${(50 + pointerX * 34 + tiltX * 9 + gravityX * 4).toFixed(2)}%`);
+      stage.style.setProperty("--spotlight-y", `${(50 + pointerY * 34 + tiltY * 8 + gravityY * 4).toFixed(2)}%`);
+      stage.style.setProperty("--pulse-x", `${(50 + pointerX * 34).toFixed(2)}%`);
+      stage.style.setProperty("--pulse-y", `${(50 + pointerY * 34).toFixed(2)}%`);
     };
 
     const updateMotionToggle = () => {
       if (!motionToggle) return;
-      motionToggle.textContent = motionEnabled ? "TILT ON" : "TILT";
+      motionToggle.textContent = motionEnabled ? "GYRO ON" : "GYRO";
       motionToggle.setAttribute("aria-pressed", String(motionEnabled));
       motionToggle.setAttribute("aria-label", motionEnabled ? "Disable device tilt" : "Enable device tilt");
     };
@@ -151,6 +166,13 @@
     const animate = (timestamp) => {
       const elapsed = Math.min((timestamp - lastTick) / 1000, 0.08);
       lastTick = timestamp;
+      if (!isScrubbing && Math.abs(frameMomentum) > 0.05) {
+        targetFrame = clampFrame(targetFrame + frameMomentum * elapsed);
+        frameMomentum *= Math.exp(-4.4 * elapsed);
+      } else if (!isScrubbing && resumeAfterMomentum) {
+        resumeAfterMomentum = false;
+        playSequence();
+      }
       if (isPlaying && !isScrubbing) {
         targetFrame += sourceFps * elapsed;
         if (targetFrame >= lastFrame) {
@@ -186,18 +208,38 @@
 
     const handleDeviceOrientation = (event) => {
       if (!motionEnabled) return;
-      tiltX = clampUnit((Number(event.gamma) || 0) / 32);
-      tiltY = clampUnit((Number(event.beta) || 0) / 36);
+      const nextTiltX = clampUnit((Number(event.gamma) || 0) / 32);
+      const nextTiltY = clampUnit((Number(event.beta) || 0) / 36);
+      tiltX += (nextTiltX - tiltX) * 0.16;
+      tiltY += (nextTiltY - tiltY) * 0.16;
+      updateSceneDepth();
+    };
+
+    const handleDeviceMotion = (event) => {
+      if (!motionEnabled || !event.accelerationIncludingGravity) return;
+      const acceleration = event.accelerationIncludingGravity;
+      const nextGravityX = clampUnit((Number(acceleration.x) || 0) / 9.8);
+      const nextGravityY = clampUnit((Number(acceleration.y) || 0) / 9.8);
+      gravityX += (nextGravityX - gravityX) * 0.1;
+      gravityY += (nextGravityY - gravityY) * 0.1;
       updateSceneDepth();
     };
 
     const setMotionEnabled = (enabled) => {
       motionEnabled = enabled;
-      if (enabled) window.addEventListener("deviceorientation", handleDeviceOrientation, { passive: true });
+      if (enabled) {
+        window.addEventListener("deviceorientation", handleDeviceOrientation, { passive: true });
+        window.addEventListener("devicemotion", handleDeviceMotion, { passive: true });
+        stage.classList.add("is-gravity-on");
+      }
       else {
         window.removeEventListener("deviceorientation", handleDeviceOrientation);
+        window.removeEventListener("devicemotion", handleDeviceMotion);
         tiltX = 0;
         tiltY = 0;
+        gravityX = 0;
+        gravityY = 0;
+        stage.classList.remove("is-gravity-on");
       }
       updateSceneDepth();
       updateMotionToggle();
@@ -213,10 +255,13 @@
             return;
           }
           try {
-            const requestPermission = window.DeviceOrientationEvent?.requestPermission;
-            if (typeof requestPermission === "function") {
-              const permission = await requestPermission.call(window.DeviceOrientationEvent);
-              if (permission !== "granted") return;
+            const permissionRequests = [window.DeviceOrientationEvent, window.DeviceMotionEvent]
+              .map((eventInterface) => ({ eventInterface, requestPermission: eventInterface?.requestPermission }))
+              .filter(({ requestPermission }) => typeof requestPermission === "function")
+              .map(({ eventInterface, requestPermission }) => requestPermission.call(eventInterface));
+            if (permissionRequests.length) {
+              const permissions = await Promise.all(permissionRequests);
+              if (permissions.some((permission) => permission !== "granted")) return;
             }
             setMotionEnabled(true);
           } catch {
@@ -233,13 +278,30 @@
 
     frameScrubber?.addEventListener("input", () => {
       pauseSequence();
+      frameMomentum = 0;
+      resumeAfterMomentum = false;
       setTargetFrame(Number(frameScrubber.value), true);
     });
+
+    const triggerScenePulse = () => {
+      stage.classList.remove("is-pulsing");
+      window.requestAnimationFrame(() => stage.classList.add("is-pulsing"));
+      window.clearTimeout(pulseTimeout);
+      pulseTimeout = window.setTimeout(() => stage.classList.remove("is-pulsing"), 760);
+    };
 
     const updateFromPointer = (event, startFrame, startX) => {
       const bounds = stage.getBoundingClientRect();
       const travelled = (event.clientX - startX) / bounds.width;
+      const previousFrame = targetFrame;
       setTargetFrame(startFrame + travelled * lastFrame, true);
+      const now = performance.now();
+      if (lastDragTime) {
+        const elapsed = Math.max(12, now - lastDragTime);
+        frameMomentum = clampMomentum(((targetFrame - previousFrame) / elapsed) * 1000);
+      }
+      lastDragFrame = targetFrame;
+      lastDragTime = now;
     };
 
     const updatePointerDepth = (event) => {
@@ -247,6 +309,8 @@
       const bounds = stage.getBoundingClientRect();
       pointerX = clampUnit(((event.clientX - bounds.left) / bounds.width - 0.5) * 2);
       pointerY = clampUnit(((event.clientY - bounds.top) / bounds.height - 0.5) * 2);
+      pointerActive = true;
+      stage.classList.add("is-pointer-active");
       updateSceneDepth();
     };
 
@@ -257,8 +321,14 @@
       wasPlayingBeforeScrub = isPlaying;
       isScrubbing = true;
       pauseSequence();
+      frameMomentum = 0;
+      resumeAfterMomentum = false;
       dragStartFrame = targetFrame;
       dragStartX = event.clientX;
+      lastDragFrame = targetFrame;
+      lastDragTime = performance.now();
+      updatePointerDepth(event);
+      triggerScenePulse();
       stage.setPointerCapture(event.pointerId);
     });
     stage.addEventListener("pointermove", (event) => {
@@ -269,26 +339,49 @@
       if (!isScrubbing) return;
       isScrubbing = false;
       stage.releasePointerCapture(event.pointerId);
-      if (wasPlayingBeforeScrub) playSequence();
+      resumeAfterMomentum = wasPlayingBeforeScrub && Math.abs(frameMomentum) > 3;
+      if (wasPlayingBeforeScrub && !resumeAfterMomentum) playSequence();
     });
     stage.addEventListener("pointerleave", () => {
       if (isScrubbing) return;
       pointerX = 0;
       pointerY = 0;
+      pointerActive = false;
+      stage.classList.remove("is-pointer-active");
       updateSceneDepth();
     });
     stage.addEventListener("pointercancel", (event) => {
       if (!isScrubbing) return;
       isScrubbing = false;
       stage.releasePointerCapture(event.pointerId);
+      frameMomentum = 0;
       if (wasPlayingBeforeScrub) playSequence();
     });
     stage.addEventListener("wheel", (event) => {
       event.preventDefault();
       pauseSequence();
+      resumeAfterMomentum = false;
       const multiplier = event.deltaMode === 1 ? 1.8 : 0.022;
+      const velocityMultiplier = event.deltaMode === 1 ? 2.4 : 0.085;
+      frameMomentum = clampMomentum(frameMomentum + event.deltaY * velocityMultiplier);
       setTargetFrame(targetFrame + event.deltaY * multiplier);
     }, { passive: false });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement || event.target?.isContentEditable) return;
+      if (event.code === "Space") {
+        event.preventDefault();
+        if (isPlaying) pauseSequence();
+        else playSequence();
+      }
+      if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+        event.preventDefault();
+        pauseSequence();
+        const direction = event.key === "ArrowRight" ? 1 : -1;
+        frameMomentum = clampMomentum(frameMomentum + direction * 26);
+        setTargetFrame(targetFrame + direction * 9);
+      }
+    });
   }
 
   const toast = document.querySelector("[data-toast]");
