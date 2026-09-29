@@ -27,10 +27,14 @@
     return `
       <section class="hero" id="home" aria-label="BURNEPEP animated introduction">
         <div class="keyframe-stage page-width" data-sequence-stage data-sequence-total="${sequence.frameCount}" data-frame-prefix="${sequence.prefix}" data-frame-extension="${sequence.extension}" data-frame-digits="${sequence.digits}" data-frame-fps="${sequence.fps}" aria-label="BURNEPEP hero animation. Use scroll or drag to explore the video.">
-          <img class="sequence-fallback" src="${firstFrame}" alt="" fetchpriority="high" />
-          <canvas class="sequence-canvas" data-sequence-canvas role="img" aria-label="BURNEPEP animated video sequence"></canvas>
+          <div class="sequence-media" data-sequence-media>
+            <img class="sequence-fallback" src="${firstFrame}" alt="" fetchpriority="high" />
+            <canvas class="sequence-canvas" data-sequence-canvas role="img" aria-label="BURNEPEP animated video sequence"></canvas>
+          </div>
+          <img class="sequence-debris" src="${A.hero.foregroundDebris}" alt="" aria-hidden="true" />
           <div class="keyframe-ui">
             <button class="keyframe-toggle" type="button" data-keyframe-toggle aria-label="Pause keyframe animation">Ⅱ</button>
+            <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false">TILT</button>
             <label class="keyframe-scrubber"><span>SCROLL / DRAG</span><input type="range" min="0" max="${sequence.frameCount - 1}" value="0" step="1" data-keyframe-scrubber aria-label="Video frame" /><b data-frame-count>001 / ${String(sequence.frameCount).padStart(3, "0")}</b></label>
           </div>
         </div>

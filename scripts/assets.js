@@ -9,12 +9,13 @@
     asset,
     alpha,
     hero: {
+      foregroundDebris: "./assets/hero-foreground-debris.png",
       sequence: {
         prefix: "./assets/hero-sequence/frame-",
         extension: ".webp",
         digits: 3,
-        frameCount: 242,
-        fps: 10,
+        frameCount: 580,
+        fps: 24,
       },
     },
     shared: {
