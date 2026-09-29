@@ -50,6 +50,13 @@
         telegram: buildTransparentAssetPath("04_community", "C20_telegram-icon"),
       },
     },
+    archive: {
+      posters: [
+        { label: "MEMES BURN BRIGHTER", image: "./assets/images/culture-wall/poster-crown-fire.png" },
+        { label: "STAY INVERTED", image: "./assets/images/culture-wall/poster-inverted-frog.png" },
+        { label: "GOOD FROGS BURN TOGETHER", image: "./assets/images/culture-wall/poster-burn-core.png" },
+      ],
+    },
     roadmap: {
       title: buildTransparentAssetPath("05_roadmap", "R01_roadmap-title"),
       icons: [

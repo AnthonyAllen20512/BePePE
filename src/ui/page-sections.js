@@ -33,10 +33,6 @@
               <canvas class="sequence-canvas" data-sequence-canvas role="img" aria-label="BURNEPEP animated video sequence"></canvas>
             </div>
             <div class="ember-layer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="keyframe-ui">
-              <p class="sequence-hint">SCROLL TO ENTER THE CORE</p>
-              <label class="keyframe-scrubber"><input type="range" min="0" max="${sequence.frameCount - 1}" value="0" step="1" data-keyframe-scrubber aria-label="Animation progress" /><b data-frame-count>001 / ${String(sequence.frameCount).padStart(3, "0")}</b></label>
-            </div>
           </div>
         </div>
       </section>`;
@@ -94,11 +90,31 @@
             <p>BURNEPEP lives through its community. Artists, creators, holders and dreamers from around the world, all flipping the same narrative. Different perspectives. One movement.</p>
             ${renderButton("JOIN OUR COMMUNITY", "#gallery")}
           </div>
-          <div class="community-collage" id="gallery">
+          <div class="community-collage">
             ${renderImage(assets.community.collage, "BURNEPEP community collage")}
             ${renderImage(assets.community.sticker, "", "collage-sticker")}
           </div>
           <div class="social-panel" aria-label="Community channels">${rows}</div>
+        </div>
+      </section>`;
+  }
+
+  function renderArchiveSection() {
+    const posters = assets.archive.posters.map((poster) => `
+      <figure class="archive-poster">
+        ${renderImage(poster.image, poster.label)}
+        <figcaption>${poster.label}</figcaption>
+      </figure>`).join("");
+    return `
+      <section class="paper-section archive" id="gallery">
+        <div class="archive-inner page-width">
+          <div class="archive-copy">
+            <p class="archive-kicker">CULTURE WALL</p>
+            <h2>THE BURN<br />LIVES ON.</h2>
+            <p>Memes, moments and good frens — every post keeps the movement in motion.</p>
+            <a class="archive-link" href="https://x.com/bepep_bsc" target="_blank" rel="noreferrer">SEE THE MOVEMENT <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="archive-posters">${posters}</div>
         </div>
       </section>`;
   }
@@ -136,7 +152,7 @@
       <footer class="site-footer">
         <div class="footer-inner page-width">
           ${renderImage(assets.shared.footerBrand, "BURNEPEP", "footer-brand")}
-          <small>© 2024 BURNEPEP. All rights reserved.</small>
+          <small>© 2026 BURNEPEP. All rights reserved.</small>
         </div>
       </footer>`;
   }
@@ -147,6 +163,7 @@
     renderManifestoSection,
     renderTokenHighlightsSection,
     renderCommunitySection,
+    renderArchiveSection,
     renderRoadmapSection,
     renderCallToActionSection,
     renderSiteFooter,

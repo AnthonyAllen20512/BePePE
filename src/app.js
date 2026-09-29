@@ -11,6 +11,7 @@
     sections.renderManifestoSection(),
     sections.renderTokenHighlightsSection(),
     sections.renderCommunitySection(),
+    sections.renderArchiveSection(),
     sections.renderRoadmapSection(),
     sections.renderCallToActionSection(),
     sections.renderSiteFooter(),
@@ -19,8 +20,6 @@
   const motionScene = document.querySelector("[data-motion-scene]");
   const heroStage = document.querySelector("[data-sequence-stage]");
   const heroCanvas = document.querySelector("[data-sequence-canvas]");
-  const frameCounter = document.querySelector("[data-frame-count]");
-  const frameRangeInput = document.querySelector("[data-keyframe-scrubber]");
 
   if (motionScene && heroStage && heroCanvas) {
     const canvasContext = heroCanvas.getContext("2d", { alpha: false, desynchronized: true });
@@ -134,13 +133,6 @@
       heroStage.classList.add("is-ready");
     }
 
-    function updateFrameControls(frameIndex) {
-      if (frameRangeInput) frameRangeInput.value = String(frameIndex);
-      if (frameCounter) {
-        frameCounter.textContent = `${String(frameIndex + 1).padStart(3, "0")} / ${String(totalFrames).padStart(3, "0")}`;
-      }
-    }
-
     function updateSceneTransform() {
       const sceneScale = 1.006 + renderedProgress * 0.032;
       heroStage.style.setProperty("--scene-x", `${(pointerOffsetX * 9).toFixed(2)}px`);
@@ -169,7 +161,6 @@
       const frameIndex = getCurrentFrameIndex();
       if (frameIndex !== renderedFrameIndex) drawFrame(frameIndex);
       preloadFramesNear(frameIndex);
-      updateFrameControls(frameIndex);
       updateSceneTransform();
 
       if (Math.abs(targetProgress - renderedProgress) >= 0.0005) requestRender();
@@ -206,7 +197,6 @@
     loadFrame(0).then(() => {
       drawFrame(0);
       preloadFramesNear(0);
-      updateFrameControls(0);
     }).catch(() => {});
 
     window.addEventListener("resize", requestRender, { passive: true });
@@ -223,10 +213,6 @@
       pointerOffsetX = 0;
       pointerOffsetY = 0;
       requestRender();
-    });
-
-    frameRangeInput?.addEventListener("input", () => {
-      setSequenceProgress(Number(frameRangeInput.value) / finalFrameIndex);
     });
 
     requestRender();

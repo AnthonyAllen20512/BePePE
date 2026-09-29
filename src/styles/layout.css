@@ -1,5 +1,5 @@
 :root {
-  --page: 1440px;
+  --page: 1520px;
   --paper: #f7f5ef;
   --ink: #151512;
   --lime: #bbf700;
@@ -187,54 +187,6 @@ body {
   pointer-events: none;
 }
 
-.keyframe-ui {
-  position: absolute;
-  z-index: 4;
-  right: 16px;
-  bottom: 16px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #fff7e5;
-}
-
-.sequence-hint {
-  margin: 0;
-  color: rgb(255 247 229 / 82%);
-  font: 800 9px/1 Arial, sans-serif;
-  letter-spacing: 0.11em;
-  text-shadow: 0 1px 8px rgb(0 0 0 / 72%);
-}
-
-.keyframe-scrubber {
-  display: grid;
-  grid-template-columns: 132px auto;
-  align-items: center;
-  gap: 9px;
-  padding: 9px 11px;
-  border: 1px solid rgb(255 250 232 / 36%);
-  border-radius: 999px;
-  background: rgb(10 10 8 / 56%);
-  font: 700 9px/1 "Aptos", "Segoe UI", Arial, sans-serif;
-  letter-spacing: 0.8px;
-  backdrop-filter: blur(8px);
-}
-
-.keyframe-scrubber b {
-  color: var(--lime);
-  white-space: nowrap;
-}
-
-.keyframe-scrubber input {
-  width: 132px;
-  accent-color: var(--lime);
-  cursor: grab;
-}
-
-.keyframe-scrubber input:active {
-  cursor: grabbing;
-}
-
 .ember-layer {
   position: absolute;
   z-index: 2;
@@ -304,7 +256,7 @@ body {
 /* Content sections */
 .paper-section {
   position: relative;
-  padding: 16px 0;
+  padding: 22px 0;
   background: transparent;
 }
 
@@ -312,8 +264,8 @@ body {
   display: grid;
   grid-template-columns: 1fr 1.18fr;
   gap: 30px;
-  min-height: 420px;
-  padding: 42px 44px;
+  min-height: 458px;
+  padding: 48px 52px;
   overflow: hidden;
   border-radius: 28px;
   background: #e8d3a2 url("../../assets/design-kit/burnepep-web-slices-v2/webp/07_textures/X01_paper-sample.webp") center / 259px 53px;
@@ -405,7 +357,7 @@ body {
 .token > .page-width,
 .community-inner,
 .roadmap-inner {
-  padding: 38px 42px;
+  padding: 46px 50px;
   border-radius: 28px;
   background: #fff;
   box-shadow: 0 12px 26px rgb(43 35 18 / 6%);
@@ -436,8 +388,8 @@ body {
 .token-card {
   display: flex;
   flex-direction: column;
-  min-height: 355px;
-  padding: 16px;
+  min-height: 382px;
+  padding: 18px;
   border: 1px solid var(--line);
   border-radius: 21px;
   background: #fcfbf8;
@@ -451,7 +403,7 @@ body {
 
 .token-art {
   display: grid;
-  height: 205px;
+  height: 222px;
   overflow: hidden;
   place-items: center;
   border-radius: 15px;
@@ -504,7 +456,7 @@ body {
 
 .community-collage {
   position: relative;
-  min-height: 280px;
+  min-height: 305px;
   overflow: hidden;
   border-radius: 22px;
   background: #151511;
@@ -526,7 +478,7 @@ body {
 .social-panel {
   display: grid;
   align-self: center;
-  height: 164px;
+  height: 180px;
   overflow: hidden;
   border-radius: 22px;
   background: #1a1a16;
@@ -587,6 +539,106 @@ body {
   font-style: normal;
 }
 
+/* Culture wall */
+.archive-inner {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: 42px;
+  min-height: 465px;
+  padding: 48px 52px;
+  overflow: hidden;
+  border-radius: 28px;
+  color: #f6efdf;
+  background: #191916 url("../../assets/design-kit/burnepep-web-slices-v2/webp/07_textures/X02_dark-sample.webp") center / 260px 50px;
+  box-shadow: 0 12px 26px rgb(43 35 18 / 9%);
+}
+
+.archive-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.archive-kicker {
+  margin: 0 0 14px;
+  color: var(--lime);
+  font: 800 11px/1 Arial, sans-serif;
+  letter-spacing: 0.16em;
+}
+
+.archive-copy h2 {
+  margin: 0;
+  color: #fff7e5;
+  font-family: "Arial Black", "Aptos Display", "Segoe UI", sans-serif;
+  font-size: clamp(36px, 4.1vw, 64px);
+  letter-spacing: -0.07em;
+  line-height: 0.88;
+}
+
+.archive-copy > p:not(.archive-kicker) {
+  max-width: 265px;
+  margin: 24px 0 28px;
+  color: #d9d1bd;
+  font: 14px/1.5 "Aptos", "Segoe UI", Arial, sans-serif;
+}
+
+.archive-link {
+  display: inline-flex;
+  gap: 16px;
+  padding: 13px 17px;
+  border: 1px solid rgb(198 255 0 / 70%);
+  border-radius: 999px;
+  color: var(--lime);
+  font: 800 11px/1 Arial, sans-serif;
+  letter-spacing: 0.08em;
+}
+
+.archive-link:hover {
+  color: #171714;
+  background: var(--lime);
+}
+
+.archive-posters {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  gap: 16px;
+}
+
+.archive-poster {
+  position: relative;
+  min-height: 345px;
+  margin: 0;
+  overflow: hidden;
+  border: 2px solid #f0dfbc;
+  border-radius: 8px;
+  background: #e8d3a2;
+  box-shadow: 0 16px 24px rgb(0 0 0 / 26%);
+}
+
+.archive-poster:nth-child(1) { transform: rotate(-3deg) translateY(8px); }
+.archive-poster:nth-child(3) { transform: rotate(3deg) translateY(8px); }
+
+.archive-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.archive-poster figcaption {
+  position: absolute;
+  right: 9px;
+  bottom: 9px;
+  left: 9px;
+  padding: 7px 8px;
+  color: #fff7e5;
+  background: rgb(20 20 17 / 84%);
+  font: 800 8px/1.2 Arial, sans-serif;
+  letter-spacing: 0.07em;
+  text-align: center;
+}
+
 .roadmap-inner {
   display: grid;
   grid-template-columns: 245px 1fr;
@@ -605,8 +657,8 @@ body {
 }
 
 .roadmap-card {
-  min-height: 190px;
-  padding: 18px;
+  min-height: 208px;
+  padding: 20px;
   border-radius: 21px;
   color: #f9f0dd;
   background: #191916;
@@ -774,6 +826,16 @@ body {
     grid-column: span 2;
   }
 
+  .archive-inner {
+    grid-template-columns: 0.68fr 1.32fr;
+    gap: 28px;
+    padding: 38px;
+  }
+
+  .archive-poster {
+    min-height: 290px;
+  }
+
   .roadmap-inner {
     grid-template-columns: 1fr;
   }
@@ -839,36 +901,31 @@ body {
     border-radius: 20px;
   }
 
-  .keyframe-ui {
-    right: 12px;
-    bottom: 12px;
-    left: 12px;
-    justify-content: flex-end;
-    gap: 7px;
-  }
-
-  .sequence-hint {
-    display: none;
-  }
-
-  .keyframe-scrubber {
-    grid-template-columns: minmax(0, 1fr) auto;
-    flex: 1;
-    min-width: 0;
-    gap: 7px;
-  }
-
-  .keyframe-scrubber input {
-    width: 100%;
-    min-width: 0;
-  }
-
   .manifesto-inner,
   .token > .page-width,
   .community-inner,
-  .roadmap-inner {
+  .roadmap-inner,
+  .archive-inner {
     padding: 24px 20px;
     border-radius: 23px;
+  }
+
+  .archive-inner {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .archive-copy > p:not(.archive-kicker) {
+    max-width: 340px;
+    margin: 18px 0 22px;
+  }
+
+  .archive-poster {
+    min-height: 210px;
+  }
+
+  .archive-poster figcaption {
+    display: none;
   }
 
   .manifesto-copy {
