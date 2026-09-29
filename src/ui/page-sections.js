@@ -122,7 +122,7 @@
   function renderRoadmapSection() {
     const stages = [
       ["01", "IGNITE", ["Build the foundation.", "Grow the community.", "Spread the word."]],
-      ["02", "FLIP", ["Expand the ecosystem.", "More utilities.", "More chaos."]],
+      ["02", "FLAP", ["Expand the ecosystem.", "More utilities.", "More chaos."]],
       ["03", "BURN", ["Activate burn mechanics.", "Reduce supply.", "Increase momentum."]],
       ["04", "BEYOND", ["A brighter tomorrow.", "More than a meme.", "A lasting culture."]],
     ];
